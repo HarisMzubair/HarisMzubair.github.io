@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#008080">
+  <title>Engineering Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <main class="desktop" aria-label="Windows 95 desktop">
+    <nav class="desktop-icons" aria-label="Desktop shortcuts">
+      <button class="desktop-icon" type="button" data-window-action="restore">
+        <span class="icon-art icon-computer" aria-hidden="true">🖥️</span>
+        <span>My Computer</span>
+      </button>
+      <button class="desktop-icon" type="button" data-window-action="restore">
+        <span class="icon-art" aria-hidden="true">🌐</span>
+        <span>Network<br>Neighborhood</span>
+      </button>
+      <button class="desktop-icon" type="button" data-window-action="restore">
+        <span class="icon-art" aria-hidden="true">📡</span>
+        <span>Internet</span>
+      </button>
+      <button class="desktop-icon" type="button" data-window-action="restore">
+        <span class="icon-art" aria-hidden="true">📁</span>
+        <span>Inbox</span>
+      </button>
+      <button class="desktop-icon" type="button" data-window-action="restore">
+        <span class="icon-art" aria-hidden="true">🗑️</span>
+        <span>Recycle Bin</span>
+      </button>
+    </nav>
+
+    <section class="window" id="main-window" aria-labelledby="window-title">
+      <header class="title-bar" id="window-drag-handle">
+        <div class="title-bar-text">
+          <span class="app-icon" aria-hidden="true">▣</span>
+          <span id="window-title">Engineering Portfolio - Internet Explorer</span>
+        </div>
+        <div class="window-controls" aria-label="Window controls">
+          <button type="button" data-window-action="minimize" aria-label="Minimize">_</button>
+          <button type="button" data-window-action="maximize" aria-label="Maximize">□</button>
+          <button type="button" data-window-action="close" aria-label="Close">×</button>
+        </div>
+      </header>
+
+      <nav class="menu-bar" aria-label="Application menu">
+        <button type="button" data-menu-action="print"><u>F</u>ile</button>
+        <button type="button" data-menu-action="contact"><u>E</u>dit</button>
+        <button type="button" data-menu-action="home"><u>P</u>rofile</button>
+        <button type="button" data-menu-action="projects"><u>G</u>o</button>
+        <button type="button" data-menu-action="experience"><u>F</u>avorites</button>
+        <button type="button" data-menu-action="about"><u>H</u>elp</button>
+      </nav>
+
+      <div class="toolbar" role="toolbar" aria-label="Browser controls">
+        <button type="button" title="Back" data-browser-action="back"><span aria-hidden="true">←</span><small>Back</small></button>
+        <button type="button" title="Forward" data-browser-action="forward"><span aria-hidden="true">→</span><small>Forward</small></button>
+        <button type="button" title="Stop" data-browser-action="stop"><span aria-hidden="true">⊗</span><small>Stop</small></button>
+        <button type="button" title="Refresh" data-browser-action="refresh"><span aria-hidden="true">↻</span><small>Refresh</small></button>
+        <button type="button" title="Home" data-browser-action="home"><span aria-hidden="true">⌂</span><small>Home</small></button>
+        <button type="button" title="Contact" data-browser-action="contact"><span aria-hidden="true">✉</span><small>Contact</small></button>
+        <div class="ie-mark" aria-hidden="true">e</div>
+      </div>
+
+      <form class="address-bar" id="address-form">
+        <label for="address">Address</label>
+        <input id="address" name="address" value="portfolio://home" autocomplete="off">
+        <button type="submit" aria-label="Go to address">▾</button>
+        <span class="links-label">Links</span>
+      </form>
+
+      <div class="browser-frame">
+        <div class="portfolio-canvas" id="portfolio-root">
+          <header class="portfolio-header" id="home">
+            <div>
+              <p class="eyebrow">Computer &amp; Electrical Engineering</p>
+              <h1>Haris Zubair</h1>
+              <p class="portfolio-title">Embedded systems, hardware design &amp; AI software engineering</p>
+            </div>
+            <div class="hero-actions">
+              <span class="availability"><span aria-hidden="true"></span> Open to engineering opportunities</span>
+              <a class="win-button" href="default res.pdf" download>Download Résumé</a>
+            </div>
+          </header>
+
+          <nav class="page-nav" aria-label="Portfolio sections">
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="experience.html">Experience</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+
+          <div class="portfolio-grid">
+            <section class="portfolio-panel about-panel" id="about">
+              <div class="panel-title">About.txt</div>
+              <div class="panel-content">
+                <h2>Profile</h2>
+                <p>I build across the hardware-software boundary, from four-layer motor-control PCBs and FPGA CPUs to engineering AI agents and medical imaging models.</p>
+                <dl class="quick-facts">
+                  <div><dt>Program</dt><dd>B.Eng. Computer Engineering, Co-op</dd></div>
+                  <div><dt>Graduation</dt><dd>May 2028</dd></div>
+                  <div><dt>Standing</dt><dd>Dean's Honour List, 3.7 GPA</dd></div>
+                  <div><dt>Location</dt><dd>Guelph, Ontario</dd></div>
+                </dl>
+              </div>
+            </section>
+
+            <section class="portfolio-panel skills-panel" id="skills">
+              <div class="panel-title">Technical Skills</div>
+              <div class="panel-content skill-groups">
+                <div>
+                  <h2>Hardware</h2>
+                  <p class="tag-list"><span>STM32</span><span>ESP32</span><span>FPGA</span><span>Jetson Xavier</span><span>Raspberry Pi</span><span>Arduino</span><span>FANUC</span><span>KUKA</span></p>
+                </div>
+                <div>
+                  <h2>Programming</h2>
+                  <p class="tag-list"><span>Python</span><span>C++</span><span>C</span><span>VHDL</span><span>Verilog</span><span>MATLAB</span><span>Java</span><span>SQL</span><span>React Native</span></p>
+                </div>
+                <div>
+                  <h2>Tools</h2>
+                  <p class="tag-list"><span>KiCad</span><span>Vivado</span><span>SolidWorks</span><span>LTspice</span><span>ROS2</span><span>Docker</span><span>Git</span><span>Azure</span><span>AWS</span></p>
+                </div>
+              </div>
+            </section>
+
+            <section class="portfolio-panel experience-panel" id="experience">
+              <div class="panel-title">Experience</div>
+              <div class="panel-content timeline">
+                <article>
+                  <time>Jan 2026 — Present</time>
+                  <h2>AI Software Engineering Student</h2>
+                  <p class="organization">Hammond Power Solutions</p>
+                  <p>Developing Python AI tools for transformer design, including FT-Transformer and FAISS similarity systems, Azure OpenAI agents, authenticated web apps, and SQL logging.</p>
+                </article>
+                <article>
+                  <time>Sep 2025 — Apr 2026</time>
+                  <h2>IoT Developer, Biomedical Robotics</h2>
+                  <p class="organization">University of Guelph Robotics Institute</p>
+                  <p>Built and tested a React Native BLE control app across Android and iOS, and verified soldered electronics and AC-powered automation systems in the lab.</p>
+                </article>
+                <article>
+                  <time>May 2025 — Aug 2025</time>
+                  <h2>Undergraduate Research Assistant</h2>
+                  <p class="organization">AI-Enabled Medical Image Analysis Lab</p>
+                  <p>Developed TensorFlow/Keras ensemble frameworks for intracranial hemorrhage detection using 42,000 DICOM images.</p>
+                </article>
+                <article>
+                  <time>Sep 2023 — Present</time>
+                  <h2>VP Safety &amp; Electrical Team Member</h2>
+                  <p class="organization">University of Guelph Robotics Team</p>
+                  <p>Designing rover E-stops, wiring harnesses, sensors, microcontroller firmware, safety documentation, and electrical schematics.</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="portfolio-panel projects-panel" id="projects">
+              <div class="panel-title">Featured Projects</div>
+              <div class="panel-content project-list">
+                <article class="project-card">
+                  <div class="project-icon" aria-hidden="true">▤</div>
+                  <div>
+                    <h2>STM32 CAN-FD Arm-Motor Drive Board</h2>
+                    <p>Designed and soldered a four-layer STM32G0 PCB for Dynamixel and ODrive motor control, with CAN-FD, RS485, buck, and LDO circuits.</p>
+                    <p class="project-stack"><b>Stack:</b> STM32G0 · CAN-FD · MAX485 · KiCad</p>
+                  </div>
+                </article>
+                <article class="project-card">
+                  <div class="project-icon" aria-hidden="true">▥</div>
+                  <div>
+                    <h2>Wi-Fi Controlled ESP32 RC Car</h2>
+                    <p>Built a four-motor RC car with WebSocket browser control and a custom 3D-printed chassis, with camera-based object detection in progress.</p>
+                    <p class="project-stack"><b>Stack:</b> ESP32-WROVER · C++ · WebSocket · JavaScript</p>
+                  </div>
+                </article>
+                <article class="project-card">
+                  <div class="project-icon" aria-hidden="true">▦</div>
+                  <div>
+                    <h2>16-bit CPU on FPGA</h2>
+                    <p>Designed a hierarchical VHDL CPU, implemented it on an FPGA, and validated instruction execution and control timing with waveform test benches.</p>
+                    <p class="project-stack"><b>Stack:</b> VHDL · FPGA · Xilinx Vivado</p>
+                  </div>
+                </article>
+                <article class="project-card">
+                  <div class="project-icon" aria-hidden="true">▧</div>
+                  <div>
+                    <h2>Automated 3-Axis Robot Arm</h2>
+                    <p>Created an Arduino-controlled arm for repeatable and live-input motion, then migrated controls to ROS2 with Gazebo motion planning.</p>
+                    <p class="project-stack"><b>Stack:</b> Arduino · C++ · ROS2 · Gazebo</p>
+                  </div>
+                </article>
+                <article class="project-card">
+                  <div class="project-icon" aria-hidden="true">▨</div>
+                  <div>
+                    <h2>Reverse-Engineered SolidWorks Assembly</h2>
+                    <p>Led a four-person team in replicating a solar-powered model as a functional 69-unique-part digital assembly with technical drawings.</p>
+                    <p class="project-stack"><b>Stack:</b> SolidWorks · Precision measurement · 3D assembly</p>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="portfolio-panel contact-panel" id="contact">
+              <div class="panel-title">Contact</div>
+              <div class="panel-content">
+                <h2>Let&rsquo;s connect</h2>
+                <p>I am interested in embedded systems, electrical design, robotics, and AI software opportunities.</p>
+                <ul class="contact-list">
+                  <li><b>Personal Email:</b> <a href="mailto:hariszub0@gmail.com">hariszub0@gmail.com</a></li>
+                  <li><b>School Email:</b> <a href="mailto:hzubair@uoguelph.ca">hzubair@uoguelph.ca</a></li>
+                  <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/haris-zubair-uofg" target="_blank" rel="noreferrer">Haris-Zubair-UofG</a></li>
+                </ul>
+                <h2 class="cert-heading">Certifications</h2>
+                <p>DeepLearning.AI Agentic AI · SolidWorks CSWA · Kaggle ML &amp; Computer Vision · IEEE CASSBLITZ</p>
+              </div>
+            </section>
+          </div>
+
+          <footer class="portfolio-footer">
+            <span>© 2026 Haris Zubair</span>
+            <a href="index.html">Home</a>
+          </footer>
+        </div>
+        <div class="scrollbar" aria-hidden="true">
+          <button tabindex="-1">▲</button>
+          <div class="scroll-track"><div class="scroll-thumb"></div></div>
+          <button tabindex="-1">▼</button>
+        </div>
+      </div>
+
+      <footer class="status-bar">
+        <div class="status-main"></div>
+        <div class="status-zone"><span aria-hidden="true">🌐</span> Internet</div>
+        <div class="resize-grip" aria-hidden="true"></div>
+      </footer>
+    </section>
+
+    <aside class="start-menu" id="start-menu" hidden aria-label="Start menu">
+      <div class="start-rail"><span>Windows 95</span></div>
+      <div class="start-items">
+        <button type="button" data-start-section="projects"><span aria-hidden="true">📁</span> Projects <b>▶</b></button>
+        <button type="button" data-start-section="experience"><span aria-hidden="true">📄</span> Experience <b>▶</b></button>
+        <button type="button" data-start-section="skills"><span aria-hidden="true">⚙️</span> Skills <b>▶</b></button>
+        <button type="button" data-start-section="contact"><span aria-hidden="true">🔍</span> Contact <b>▶</b></button>
+        <button type="button" data-start-section="about"><span aria-hidden="true">❔</span> About</button>
+        <button type="button" data-start-section="home"><span aria-hidden="true">▶️</span> Home</button>
+        <hr>
+        <button type="button" id="shutdown"><span aria-hidden="true">🔌</span> Shut Down...</button>
+      </div>
+    </aside>
+
+    <footer class="taskbar">
+      <button class="start-button" id="start-button" type="button" aria-expanded="false" aria-controls="start-menu">
+        <span class="windows-mark" aria-hidden="true">▦</span><b>Start</b>
+      </button>
+      <div class="taskbar-divider" aria-hidden="true"></div>
+      <button class="task-button active" id="task-button" type="button">
+        <span aria-hidden="true">▣</span> Engineering Portfolio
+      </button>
+      <div class="tray">
+        <span aria-hidden="true">🔊</span>
+        <time id="clock" datetime=""></time>
+      </div>
+    </footer>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
