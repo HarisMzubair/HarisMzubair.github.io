@@ -51,13 +51,11 @@
         <button type="button" data-menu-action="home"><u>P</u>rofile</button>
         <button type="button" data-menu-action="projects"><u>G</u>o</button>
         <button type="button" data-menu-action="experience"><u>F</u>avorites</button>
-        <button type="button" data-menu-action="about"><u>H</u>elp</button>
       </nav>
 
       <div class="toolbar" role="toolbar" aria-label="Browser controls">
         <button type="button" title="Back" data-browser-action="back"><span aria-hidden="true">←</span><small>Back</small></button>
         <button type="button" title="Forward" data-browser-action="forward"><span aria-hidden="true">→</span><small>Forward</small></button>
-        <button type="button" title="Stop" data-browser-action="stop"><span aria-hidden="true">⊗</span><small>Stop</small></button>
         <button type="button" title="Refresh" data-browser-action="refresh"><span aria-hidden="true">↻</span><small>Refresh</small></button>
         <button type="button" title="Home" data-browser-action="home"><span aria-hidden="true">⌂</span><small>Home</small></button>
         <button type="button" title="Contact" data-browser-action="contact"><span aria-hidden="true">✉</span><small>Contact</small></button>
@@ -72,7 +70,7 @@
       </form>
 
       <div class="browser-frame">
-        <div class="portfolio-canvas" id="portfolio-root">
+        <div class="portfolio-canvas" id="portfolio-root" tabindex="0" aria-label="Portfolio content">
           <header class="portfolio-header" id="home">
             <div>
               <p class="eyebrow">Computer &amp; Electrical Engineering</p>
@@ -223,10 +221,10 @@
             <a href="index.html">Home</a>
           </footer>
         </div>
-        <div class="scrollbar" aria-hidden="true">
-          <button tabindex="-1">▲</button>
-          <div class="scroll-track"><div class="scroll-thumb"></div></div>
-          <button tabindex="-1">▼</button>
+        <div class="scrollbar" aria-label="Page scroll controls">
+          <button type="button" data-scroll-up aria-label="Scroll up">▲</button>
+          <div class="scroll-track" data-scroll-track><div class="scroll-thumb" data-scroll-thumb aria-hidden="true"></div></div>
+          <button type="button" data-scroll-down aria-label="Scroll down">▼</button>
         </div>
       </div>
 

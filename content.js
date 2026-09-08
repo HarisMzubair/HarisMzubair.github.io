@@ -133,6 +133,33 @@ const pages = {
           <p class="tag-list"><span>STM32</span><span>ESP32</span><span>FPGA</span><span>KiCad</span><span>Python</span><span>C/C++</span><span>VHDL</span><span>ROS2</span><span>SolidWorks</span><span>PyTorch</span></p>
         </div>
       </section>
+      <section class="portfolio-panel">
+        <div class="panel-title">Education</div>
+        <div class="panel-content">
+          <article class="home-education">
+            <div class="record-heading">
+              <div><h2>Bachelor of Engineering, Computer Engineering</h2><p>Co-operative Education · University of Guelph</p></div>
+              <time>Sep 2023 — May 2028</time>
+            </div>
+            <p>Department of Computer and Electrical Engineering · Guelph, Ontario</p>
+            <ul>
+              <li>College of Engineering Dean's Honour List with a 3.7 GPA.</li>
+              <li>Relevant coursework includes Digital System Design, Electric Circuits, Computer Organization, Microcomputer Interfacing, Electronic Devices, Signal Processing, Data Structures, and Engineering Design.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section class="portfolio-panel">
+        <div class="panel-title">Certifications</div>
+        <div class="panel-content">
+          <div class="certificate-grid home-certificates">
+            <article><h3>DeepLearning.AI Agentic AI</h3><p>Agentic design patterns using Python · 2026</p></article>
+            <article><h3>SolidWorks CSWA</h3><p>Certified SolidWorks Associate · 2025</p></article>
+            <article><h3>Kaggle Course Certificates</h3><p>Python, Pandas, machine learning, deep learning, and computer vision · 2025</p></article>
+            <article><h3>IEEE CASSBLITZ</h3><p>Digital and analog circuits examination · 2025</p></article>
+          </div>
+        </div>
+      </section>
     </div>
     <div class="home-directory">
       <a class="directory-card home-extra-link" href="about.html">

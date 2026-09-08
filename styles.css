@@ -332,7 +332,8 @@ button {
   min-width: 0;
   min-height: 0;
   padding: 30px clamp(22px, 4vw, 58px) 18px;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: #fff;
   color: #191919;
   font-family: Georgia, "Times New Roman", serif;
@@ -340,6 +341,13 @@ button {
   line-height: 1.5;
   scroll-behavior: smooth;
   user-select: text;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.portfolio-canvas::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .portfolio-canvas h1,
@@ -479,6 +487,9 @@ button {
 .home-overview { display: grid; padding: 26px 0 8px; grid-template-columns: minmax(0, 1fr); gap: 16px; }
 .home-facts { margin-bottom: 0; font-family: var(--font); font-size: 11px; font-weight: 700; }
 .compact-skills .tag-list { margin-top: 0; }
+.home-education ul { margin-bottom: 0; padding-left: 20px; }
+.home-education li { margin-bottom: 7px; }
+.home-certificates article { background: #fff; }
 .home-extra-link { display: none !important; }
 
 .directory-card {
@@ -1013,6 +1024,11 @@ button {
   font-size: 8px;
 }
 
+.scrollbar button:disabled {
+  color: #808080;
+  text-shadow: 1px 1px #fff;
+}
+
 .scroll-track {
   position: relative;
   background-color: #fff;
@@ -1023,7 +1039,7 @@ button {
 
 .scroll-thumb {
   position: absolute;
-  top: 8%;
+  top: 0;
   right: 0;
   left: 0;
   height: 48px;
@@ -1032,6 +1048,7 @@ button {
   border-bottom: 2px solid #000;
   border-left: 2px solid #fff;
   background: var(--silver);
+  touch-action: none;
 }
 
 .status-bar {

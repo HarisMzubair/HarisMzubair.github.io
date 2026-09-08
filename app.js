@@ -6,10 +6,16 @@ const addressForm = document.querySelector("#address-form");
 const clock = document.querySelector("#clock");
 const portfolio = document.querySelector("#portfolio-root");
 const dragHandle = document.querySelector("#window-drag-handle");
+const themedScrollbar = document.querySelector(".scrollbar");
+const scrollTrack = document.querySelector("[data-scroll-track]");
+const scrollThumb = document.querySelector("[data-scroll-thumb]");
+const scrollUpButton = document.querySelector("[data-scroll-up]");
+const scrollDownButton = document.querySelector("[data-scroll-down]");
 
 let maximized = false;
 let dragState = null;
 let restoredGeometry = null;
+let scrollDragState = null;
 const pageRoutes = {
   home: "index.html",
   about: "about.html",
@@ -81,8 +87,6 @@ document.addEventListener("click", (event) => {
       navigateToPage("contact");
     } else if (action === "refresh") {
       window.location.reload();
-    } else if (action === "stop") {
-      window.stop();
     }
   }
 
@@ -116,6 +120,64 @@ addressForm.addEventListener("submit", (event) => {
   const page = document.querySelector("#address").value.replace("portfolio://", "").replace(/[^a-z]/gi, "").toLowerCase();
   navigateToPage(page);
 });
+
+function updateThemedScrollbar() {
+  if (!portfolio || !themedScrollbar || !scrollTrack || !scrollThumb) return;
+
+  const scrollRange = Math.max(0, portfolio.scrollHeight - portfolio.clientHeight);
+  const trackHeight = scrollTrack.clientHeight;
+  const thumbHeight = scrollRange === 0
+    ? trackHeight
+    : Math.max(36, Math.round(trackHeight * portfolio.clientHeight / portfolio.scrollHeight));
+  const thumbRange = Math.max(0, trackHeight - thumbHeight);
+  const thumbTop = scrollRange === 0 ? 0 : Math.round((portfolio.scrollTop / scrollRange) * thumbRange);
+
+  scrollThumb.style.height = `${thumbHeight}px`;
+  scrollThumb.style.top = `${thumbTop}px`;
+  themedScrollbar.classList.toggle("disabled", scrollRange === 0);
+  scrollUpButton.disabled = scrollRange === 0;
+  scrollDownButton.disabled = scrollRange === 0;
+}
+
+scrollUpButton?.addEventListener("click", () => {
+  portfolio.scrollBy({ top: -80, behavior: "smooth" });
+});
+
+scrollDownButton?.addEventListener("click", () => {
+  portfolio.scrollBy({ top: 80, behavior: "smooth" });
+});
+
+scrollTrack?.addEventListener("click", (event) => {
+  if (event.target === scrollThumb) return;
+  const direction = event.clientY < scrollThumb.getBoundingClientRect().top ? -1 : 1;
+  portfolio.scrollBy({ top: direction * portfolio.clientHeight * 0.85, behavior: "smooth" });
+});
+
+scrollThumb?.addEventListener("pointerdown", (event) => {
+  const scrollRange = portfolio.scrollHeight - portfolio.clientHeight;
+  const thumbRange = scrollTrack.clientHeight - scrollThumb.offsetHeight;
+  if (scrollRange <= 0 || thumbRange <= 0) return;
+  scrollDragState = { pointerId: event.pointerId, startY: event.clientY, startScrollTop: portfolio.scrollTop, scrollRange, thumbRange };
+  scrollThumb.setPointerCapture(event.pointerId);
+  event.preventDefault();
+});
+
+scrollThumb?.addEventListener("pointermove", (event) => {
+  if (!scrollDragState || event.pointerId !== scrollDragState.pointerId) return;
+  const delta = event.clientY - scrollDragState.startY;
+  portfolio.scrollTop = scrollDragState.startScrollTop + (delta / scrollDragState.thumbRange) * scrollDragState.scrollRange;
+});
+
+scrollThumb?.addEventListener("pointerup", (event) => {
+  if (!scrollDragState || event.pointerId !== scrollDragState.pointerId) return;
+  scrollThumb.releasePointerCapture(event.pointerId);
+  scrollDragState = null;
+});
+
+portfolio?.addEventListener("scroll", updateThemedScrollbar, { passive: true });
+window.addEventListener("resize", updateThemedScrollbar);
+window.addEventListener("load", updateThemedScrollbar, { once: true });
+window.requestAnimationFrame(updateThemedScrollbar);
 
 dragHandle.addEventListener("pointerdown", (event) => {
   if (maximized || event.target.closest("button") || window.innerWidth <= 680) return;
