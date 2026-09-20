@@ -113,7 +113,7 @@ const pages = {
       </div>
       <div class="hero-actions">
         <span class="availability"><span aria-hidden="true"></span> Open to engineering opportunities</span>
-        <a class="win-button" href="default res.pdf" download>Download Resume</a>
+        <a class="win-button" href="Haris%20Zubair%20Website%20Resume.pdf" download>Download Resume</a>
       </div>
     </header>
     ${sharedNav}
@@ -290,15 +290,15 @@ const pages = {
         <a href="mailto:hariszub0@gmail.com"><span aria-hidden="true">✉</span><span><b>Personal Email</b><small>hariszub0@gmail.com</small></span></a>
         <a href="mailto:hzubair@uoguelph.ca"><span aria-hidden="true">@</span><span><b>School Email</b><small>hzubair@uoguelph.ca</small></span></a>
         <a href="https://www.linkedin.com/in/haris-zubair-uofg" target="_blank" rel="noreferrer"><span aria-hidden="true">in</span><span><b>LinkedIn</b><small>Haris-Zubair-UofG</small></span></a>
-        <a href="default res.pdf" download><span aria-hidden="true">↓</span><span><b>Résumé</b><small>Download PDF</small></span></a>
+        <a href="Haris%20Zubair%20Website%20Resume.pdf" download><span aria-hidden="true">↓</span><span><b>Résumé</b><small>Download PDF</small></span></a>
       </section>
       <aside class="availability-panel portfolio-panel">
         <div class="panel-title">Availability</div>
-        <div class="panel-content"><p class="availability"><span aria-hidden="true"></span> Open to engineering opportunities</p><p>Based in Ontario. Expected graduation: May 2028.</p><p>Primary interests:</p><ul><li>Embedded systems and firmware</li><li>PCB and electrical design</li><li>Robotics and automation</li><li>Engineering AI applications</li></ul></div>
+        <div class="panel-content"><p class="availability"><span aria-hidden="true"></span> Open to engineering opportunities</p><p>Based in Ontario. Expected graduation: May 2028.</p><p>Primary interests:</p><ul><li>Embedded systems and hardware</li><li>PCB and electrical design</li><li>Robotics and automation</li><li>Engineering AI applications</li></ul></div>
       </aside>
     </div>
     ${footer}`
-};
+}; 
 
 function initializeMediaGalleries() {
   const galleries = [...document.querySelectorAll("[data-slideshow]")];
